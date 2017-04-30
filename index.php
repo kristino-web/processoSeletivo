@@ -2,12 +2,9 @@
 	$page_title = "Listar Produtos";
 	include_once "parts/header.php";
 
-
 	echo "<div class='right-button-margin'>";
     echo "<a href='criar_produto.php' class='btn btn-primary pull-right'><i class='fa fa-plus'></i> Criar Produtos</a>";
 	echo "</div>";
-	
-
  
     $page = isset($_GET['page']) ? $_GET['page'] : 1;
  
@@ -73,7 +70,6 @@
 		    var q = confirm("Tens certeza que deseja remover esse produto?");
 		     
 		    if (q == true){
-		 
 		        $.post('delete_produto.php', {
 		            object_id: id
 		        }, function(data){
@@ -81,7 +77,6 @@
 		        }).fail(function() {
 		            alert('Não foi possivel deletar o produto.');
 		        });
-		 
 		    }
 		         
 		    return false;
